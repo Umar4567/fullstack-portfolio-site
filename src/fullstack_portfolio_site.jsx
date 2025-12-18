@@ -93,7 +93,7 @@ export default function FullstackPortfolioSite() {
             <li className="flex items-center gap-2">
               <MapPin size={16} /> India
             </li>
-            <li>Experience: 1.5+ Years (Development)</li>
+            <li>Experience: 2 Years (Development)</li>
             <li>Specialization: React.js, JavaScript, Full Stack Development</li>
           </ul>
         </motion.div>

@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Github, Mail, MapPin } from "lucide-react";
+import { Github, Mail, MapPin, ExternalLink } from "lucide-react";
 
 // Animated variants
 const container = {
@@ -199,6 +199,14 @@ export default function FullstackPortfolioSite() {
               tech: ["HTML", "CSS", "JavaScript"],
               url: "https://github.com/Umar4567/OPslavvy-Solutions.io"
             },
+            {
+              id: "luxe",
+              title: "Luxe Estate Rebuild",
+              desc: "A real-estate renovation project focusing on modernizing listings, galleries and booking workflows.",
+              tech: ["React", "JavaScript", "CSS"],
+              url: "https://github.com/Umar4567/luxe-estate-rebuild",
+              demo: "https://real-estate-rmahesh.netlify.app/",
+            },
           ].map((p) => (
             <motion.div
               key={p.id}
@@ -225,18 +233,32 @@ export default function FullstackPortfolioSite() {
                 </div>
               </div>
 
-              {/* show GitHub link icon when url provided */}
-              {p.url ? (
-                <a
-                  href={p.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/8 hover:bg-white/20 transition no-underline"
-                  aria-label={`Open ${p.title} on GitHub`}
-                >
-                  <Github size={18} className="text-amber-50" />
-                </a>
-              ) : null}
+              {/* show GitHub and demo links when provided */}
+              <div className="flex items-center gap-3">
+                {p.url ? (
+                  <a
+                    href={p.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/8 hover:bg-white/20 transition no-underline"
+                    aria-label={`Open ${p.title} on GitHub`}
+                  >
+                    <Github size={18} className="text-amber-50" />
+                  </a>
+                ) : null}
+
+                {p.demo ? (
+                  <a
+                    href={p.demo}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/8 hover:bg-white/20 transition no-underline"
+                    aria-label={`Open live demo for ${p.title}`}
+                  >
+                    <ExternalLink size={16} className="text-amber-50" />
+                  </a>
+                ) : null}
+              </div>
             </motion.div>
           ))}
         </motion.div>
